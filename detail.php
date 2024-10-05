@@ -7,7 +7,7 @@ include("funcs.php");
 $pdo = db_conn();
 
 //２．データ登録SQL作成
-$sql = "SELECT * FROM gs_an_table WHERE id=:id";
+$sql = "SELECT * FROM gs_an_table_TEST WHERE id=:id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id',$id,PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
 $status = $stmt->execute();
@@ -56,11 +56,15 @@ $v =  $stmt->fetch(); //PDO::FETCH_ASSOC[カラム名のみで取得できるモ
 <form method="POST" action="update.php">
   <div class="jumbotron">
    <fieldset>
-    <legend>フリーアンケート更新</legend>
-     <label>名前：<input type="text" name="name" value="<?=$v["name"]?>"></label><br>
-     <label>Email：<input type="text" name="email"  value="<?=$v["email"]?>"></label><br>
-     <label>年齢：<input type="text" name="age"  value="<?=$v["age"]?>"></label><br>
-     <label><textArea name="naiyou" rows="4" cols="40"><?=$v["naiyou"]?></textArea></label><br>
+    <legend>所属情報（基本情報）</legend>
+     <label>名前：<input type="text" name="username" value="<?=$v["username"]?>"></label><br>
+     <label>社員番号：<input type="text" name="employee_number"  value="<?=$v["employee_number"]?>"></label><br>
+     <label>部署：<input type="text" name="department"  value="<?=$v["department"]?>"></label><br>
+     <label>役職:<input type="text" name="position"  value="<?=$v["position"]?>"></label><br>
+     <label>性別:<input type="text" name="gender"  value="<?=$v["gender"]?>"></label><br>
+     <label>メールアドレス:<input type="text" name="email"  value="<?=$v["email"]?>"></label><br>
+     <label>備考:<textArea name="naiyou" rows="4" cols="40"><?=$v["naiyou"]?></textArea></label><br>
+     <label>モチベーションの源泉:<input type="checkbox" name="options[]"  value="<?=$v["options[]"]?>"></label><br>
      <input type="hidden" name="id" value="<?=$v["id"]?>">
      <input type="submit" value="送信">
     </fieldset>

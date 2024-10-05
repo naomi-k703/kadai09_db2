@@ -1,0 +1,99 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* フォームのコンテナ */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* セクションのタイトル */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* 下線 */
+.underline {
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* フォームの行 */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* フォームグループ（ラベルと入力フィールド） */
+.form-group {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* ラベル */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* テキスト入力フィールド */
+input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* テキストエリア */
+textarea {
+    height: 100px;
+}
+
+/* チェックボックスのラベル */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Submitボタン */
+input[type="submit"] {
+    background-color: #a1b0c1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* レスポンシブ対応（小さい画面用） */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+    .form-group {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
